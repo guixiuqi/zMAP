@@ -1,0 +1,13 @@
+Sample_id	Sample_condition	MS_run
+ConditionA_rep1	ConditionA	rep1
+ConditionB_rep1	ConditionB	rep1
+ConditionC_rep1	ConditionC	rep1
+ConditionD_rep1	ConditionD	rep1
+ConditionA_rep2	ConditionA	rep2
+ConditionB_rep2	ConditionB	rep2
+ConditionC_rep2	ConditionC	rep2
+ConditionD_rep2	ConditionD	rep2
+ConditionA_rep3	ConditionA	rep3
+ConditionB_rep3	ConditionB	rep3
+ConditionC_rep3	ConditionC	rep3
+ConditionD_rep3	ConditionD	rep3

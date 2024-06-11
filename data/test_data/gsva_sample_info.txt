@@ -1,0 +1,13 @@
+Sample_id	Sample_condition
+ConditionA_rep1	ConditionA
+ConditionB_rep1	ConditionB
+ConditionC_rep1	ConditionC
+ConditionD_rep1	ConditionD
+ConditionA_rep2	ConditionA
+ConditionB_rep2	ConditionB
+ConditionC_rep2	ConditionC
+ConditionD_rep2	ConditionD
+ConditionA_rep3	ConditionA
+ConditionB_rep3	ConditionB
+ConditionC_rep3	ConditionC
+ConditionD_rep3	ConditionD
