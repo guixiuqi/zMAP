@@ -27,13 +27,21 @@ export scriptPATH
 gmtPATH=./data/gmt
 inputdataPATH=./data
 ```
-## Dependencies
+## Python dependencies
 ```bat
-conda install matplotlib
-conda install conda-forge::pandas
-conda install anaconda::scipy
-conda install anaconda::seaborn
-conda install -c conda-forge scikit-learn
+conda install matplotlib  #version 3.6.2
+conda install conda-forge::pandas #version 1.5.1
+conda install anaconda::scipy #version 1.10.1
+conda install anaconda::seaborn #version 0.12.2
+conda install -c conda-forge scikit-learn #version 1.1.3
+```
+
+## R dependencies
+```bat
+library(GSVA)  #version 1.28.0
+library(limma) #version 3.36.5
+library(GSEABase,quietly=TRUE) #version 1.42.0
+
 ```
 
 
@@ -56,9 +64,7 @@ Note:(1). The protein intensity matrix does not require normalization.(2). Sampl
 Use the command shown as below:
 
 ```bat
-python $scriptPATH/zmap_step1_quantity_anaysis.py --protein_intensity_file $inputdataPATH/test_data/raw_protein_intensity_in_gene
-_level_for_web.txt --sample_info $inputdataPATH/test_data/zmap_sample_info_for_web.txt --outdir $inputdataPATH/test_data/zMAP_res
-ults --window_size 400 --step_size 100 --percent 30 --method exponential_function
+python $scriptPATH/zmap_step1_quantity_anaysis.py --protein_intensity_file $inputdataPATH/test_data/raw_protein_intensity_in_gene_level_for_web.txt --sample_info $inputdataPATH/test_data/zmap_sample_info_for_web.txt --outdir $inputdataPATH/test_data/zMAP_results --window_size 400 --step_size 100 --percent 30 -method exponential_function
 ```
 ## Downstream analyses based on z-statistic
 
@@ -83,30 +89,84 @@ Use the command shown as below:
 python $scriptPATH/sample_quality_control.py --z_statistic_matrix $inputdataPATH/test_data/zMAP_results/z_statistic_table.txt --sample_info $inputdataPATH/test_data/zmap_sample_info_for_web.tx
 t --outdir $inputdataPATH/test_data/sample_quality_control
 ```
+### Hypervariable proteins(HVPs) identification and clustering
+
+The chi-square statistics derived by zMAP along with the associated numbers of degrees of freedom were summed across MS runs for each protein, giving rise to a p-value that assessed the overall expression variability of the protein. This functionality is designed toOut select hypervariable proteins (HVPs) from the output files of zMAP and cluster them to obtain multiple expression signatures. Then, pathway enrichment analysis was conducted on these signatures to reveal biological insights.
+![HVPs](https://github.com/guixiuqi/zMAP/blob/main/imgs/zmap_hvps_cluster.png "zMAP_Hvps")
+
+Three input files provided by user:
+
+1. Output file zmap_chi_square_pvalue.txt from zMAP 
 
 
+2. Output file z_statistic_table.txt from zMAP
 
 
-```r
-# Get a motif pwms
-example_motifs <- getJasparMotifs(species = "Homo sapiens",
-                                  collection = "CORE")
-# Make a set of input regions
-Input <- GenomicRanges::GRanges(seqnames = c("chr1","chr2","chr2"),
-                                ranges = IRanges::IRanges(start = c(76585873,42772928,100183786),
-                                                          width = 500))
-# Make a set of control regions
-Control <- GenomicRanges::GRanges(seqnames = c("chr1","chr3","chr5"),
-                                  ranges = IRanges::IRanges(start = c(453123,6524593,100184233),
-                                                            width = 500))
-# Scan motif for example motifs
-motif_ix_input <- motifScan(example_motifs, Input, genome = "BSgenome.Hsapiens.UCSC.hg19")
-motif_ix_control <- motifScan(example_motifs, Control, genome = "BSgenome.Hsapiens.UCSC.hg19")
+    Note: (1). The protein intensity matrix does not require normalization. (2). Sample names can only consist of letters, numbers, and underscores.
 
-# Find Enrichment motif of input by control
-Enrichment_result <- motifEnrichment(motif_ix_input, motif_ix_control)
+3. Sample information file
+
+    Sample information file is a three-column, tab-delimited file with the first line identifying the columns. The column names are ```Sample_id```, ```Sample_condition```, and ```MS_run```.
+   
+Parameters:
+
+1. Number of HVP clusters (```--cluster_number_for_hypervariable```)
+
+   HVPs are hierarchically clustered into multiple clusters revealing diverse expression signatures across different sample conditions.
+
+2. Minimum proteins within each cluster (```--minclustersize```)
+
+   If the number of proteins within certain clusters falls below the specified minimum, these clusters will be merged into a single cluster labeled as cluster_0. As a result, the final number of clusters may be fewer than what the user initially specified.
+
+3. Number of top-ranked DEPs (```--top```)
+
+   Top-ranked proteins are selected for heatmap visualization.
+
+4. Number of DEP clusters (```--cluster_number_for_top_proteins```)
+
+   Top-ranked DEPs are clustered into multiple clusters based on K-means.
+
+5. FDR (```--fdr```)
+
+   BH-adjusted pvalue cutoff for significance.
+
+Use the command shown as below:
+```bat
+python $scriptPATH/zmap_hypervariable_proteins_cluster.py --pvalue_results $inputdataPATH/test_data/zMAP_results/zmap_chi_square_pvalue.txt --z_statistic_matrix $inputdataPATH/test_data/zMAP_results/z_statistic_table.txt --sample_info $inputdataPATH/test_data/zmap_sample_info_for_web.txt --outdir $inputdataPATH/test_data/zmap_hypervariable_proteins_cluster --cluster_number_for_hypervariable 15 --minclustersize 20 --top 100 --cluster_number_for_top_proteins 8 --fdr 0.05
 ```
-You could type `?motifEnrichment` for more detail.
+### Gene set variation analysis
+GSVA calculates gene set enrichment scores (GSVA scores) for each sample using the z-statistic matrix.
+Differential expression analysis is then conducted on these GSVA scores using limma, aiming to identify differentially regulated pathways across sample groups. Finally, the differential pathway activities across sample groups are visualized using a heatmap.
+![GSVA of zMAP](https://github.com/guixiuqi/zMAP/blob/main/imgs/zmap_gsva.png "zMAP_GSVA")
+
+Two input files provided by user:
+
+1. Output file z_statistic_table.txt from zMAP
+
+
+    Note:(1). The protein intensity matrix does not require normalization.(2). Sample names can only consist of letters, numbers, and underscores.
+
+2. Sample information file
+
+    Sample information file is a three-column, tab-delimited file with the first line identifying the columns. The column names are ```Sample_id```, ```Sample_condition```, and ```MS_run```.
+
+Parameters:
+
+1. Top N(number) Pathways (```--top_n```)
+ 
+   Extract a table of the top-ranked differentially regulated pathways across sample groups.
+
+2. FDR (```--fdr```)
+
+   BH-adjusted pvalue cutoff for significance.
+
+
+
+Use the command shown as below:
+```bat
+python $scriptPATH/gsva.py --z_statistic_matrix $inputdataPATH/test_data/zMAP_results/z_statistic_table.txt --sample_info $inputdataPATH/test_data/gsva_sample_info.txt --outdir $inputdataPATH//test_data/gsva --top_n 50 --fdr 0.05
+```
+
 
 # Citation
 
