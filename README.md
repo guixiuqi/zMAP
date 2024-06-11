@@ -27,6 +27,15 @@ export scriptPATH
 gmtPATH=./data/gmt
 inputdataPATH=./data
 ```
+##dependencies
+```bat
+conda install matplotlib
+conda install conda-forge::pandas
+conda install anaconda::scipy
+conda install anaconda::seaborn
+conda install -c conda-forge scikit-learn
+```
+
 
 # Usage
 
