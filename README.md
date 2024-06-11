@@ -48,7 +48,6 @@ Two input files provided by user:
    
 A tab-delimited file containing raw gene-level protein intensity with samples in columns, and gene symbols in rows.
 
-
     Note:(1). The protein intensity matrix does not require normalization.(2). Sample names can only consist of letters, numbers, and underscores.
 
 2. Sample information file
