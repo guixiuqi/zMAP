@@ -27,7 +27,7 @@ export scriptPATH
 gmtPATH=./data/gmt
 inputdataPATH=./data
 ```
-##dependencies
+## Dependencies
 ```bat
 conda install matplotlib
 conda install conda-forge::pandas
