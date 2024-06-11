@@ -66,6 +66,7 @@ ults --window_size 400 --step_size 100 --percent 30 --method exponential_functio
 
 Performing hierarchical clustering and principal component analysis on the z-statistic matrix of samples provides a concise visualization of the overall impact of sample conditions and MS runs.
 
+
 Two input files provided by user:
 
 1. Output file z_statistic_table.txt from zMAP
@@ -79,9 +80,8 @@ Two input files provided by user:
 
 Use the command shown as below:
 ```bat
-python $scriptPATH/zmap_step1_quantity_anaysis.py --protein_intensity_file $inputdataPATH/test_data/raw_protein_intensity_in_gene
-_level_for_web.txt --sample_info $inputdataPATH/test_data/zmap_sample_info_for_web.txt --outdir $inputdataPATH/test_data/zMAP_res
-ults --window_size 400 --step_size 100 --percent 30 --method exponential_function
+python $scriptPATH/sample_quality_control.py --z_statistic_matrix $inputdataPATH/test_data/zMAP_results/z_statistic_table.txt --sample_info $inputdataPATH/test_data/zmap_sample_info_for_web.tx
+t --outdir $inputdataPATH/test_data/sample_quality_control
 ```
 
 
