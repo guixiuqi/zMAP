@@ -29,11 +29,11 @@ inputdataPATH=./data
 ```
 ## Python dependencies
 ```bat
-conda install matplotlib
-conda install conda-forge::pandas
-conda install anaconda::scipy
-conda install anaconda::seaborn
-conda install -c conda-forge scikit-learn
+conda install matplotlib  #version 3.6.2
+conda install conda-forge::pandas #version 1.5.1
+conda install anaconda::scipy #version 1.10.1
+conda install anaconda::seaborn #version 0.12.2
+conda install -c conda-forge scikit-learn #version 1.1.3
 ```
 
 ## R dependencies
