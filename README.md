@@ -25,7 +25,7 @@ regression that regresses the observed variances of included proteins against a 
 is taken as the variance estimate. To avoid the influence of potential hypervariable proteins, which can lead to an overestimated variance, only a certain proportion of 
 the proteins with the smallest observed variances are used for the quantile regression. Finally, the MVC is fitted by regressing the variance estimates from all windows
 against the corresponding intensity levels. Notably, this sliding-window process equipped with the robust quantile regression can avoid the requirement of biological replicates in each single MS run for fitting an MVC.
-![Workflow of zMAP](https://example.com/cat.jpg "zMAP Workflow")
+![Workflow of zMAP](https://github.com/guixiuqi/zMAP/tree/main/img/zMAP_workflow.png "zMAP Workflow")
 
 # Try it
 
