@@ -45,6 +45,7 @@ zMAP models the mean-variance dependence associated with ILMS intensities and ac
 Two input files provided by user:
 
 1. Protein intensity file
+   
 A tab-delimited file containing raw gene-level protein intensity with samples in columns, and gene symbols in rows.
 
 
