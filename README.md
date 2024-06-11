@@ -102,7 +102,7 @@ Three input files provided by user:
 2. Output file z_statistic_table.txt from zMAP
 
 
-    Note:(1). The protein intensity matrix does not require normalization.(2). Sample names can only consist of letters, numbers, and underscores.
+    Note: (1). The protein intensity matrix does not require normalization. (2). Sample names can only consist of letters, numbers, and underscores.
 
 3. Sample information file
 
@@ -110,23 +110,23 @@ Three input files provided by user:
    
 Parameters:
 
-1. Number of HVP clusters(```--cluster_number_for_hypervariable```)
+1. Number of HVP clusters (```--cluster_number_for_hypervariable```)
 
    HVPs are hierarchically clustered into multiple clusters revealing diverse expression signatures across different sample conditions.
 
-2. Minimum proteins within each cluster(```--minclustersize```)
+2. Minimum proteins within each cluster (```--minclustersize```)
 
    If the number of proteins within certain clusters falls below the specified minimum, these clusters will be merged into a single cluster labeled as cluster_0. As a result, the final number of clusters may be fewer than what the user initially specified.
 
-3. Number of top-ranked DEPs(```--top```)
+3. Number of top-ranked DEPs (```--top```)
 
    Top-ranked proteins are selected for heatmap visualization.
 
-4. Number of DEP clusters(```--cluster_number_for_top_proteins```)
+4. Number of DEP clusters (```--cluster_number_for_top_proteins```)
 
    Top-ranked DEPs are clustered into multiple clusters based on K-means.
 
-5. FDR(```--fdr```)
+5. FDR (```--fdr```)
 
    BH-adjusted pvalue cutoff for significance.
 
@@ -152,11 +152,11 @@ Two input files provided by user:
 
 Parameters:
 
-1. Top N(number) Pathways(```--top_n```)
+1. Top N(number) Pathways (```--top_n```)
  
    Extract a table of the top-ranked differentially regulated pathways across sample groups.
 
-2. FDR(```--fdr```)
+2. FDR (```--fdr```)
 
    BH-adjusted pvalue cutoff for significance.
 
