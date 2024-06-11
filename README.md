@@ -16,7 +16,7 @@ A Web-based application of zMAP is provided at http://bioinfo.sibs.ac.cn/shaolab
 
 
 # Installation
-
+## from source code
 The latest version release of `motifscanR` could install with:
 
 
