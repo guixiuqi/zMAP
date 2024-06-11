@@ -44,16 +44,13 @@ zMAP models the mean-variance dependence associated with ILMS intensities and ac
 
 Two input files need:
 
-1. ```bat
-   Protein intensity file
-   ```
-
+1. Protein intensity file
 A tab-delimited file containing raw gene-level protein intensity with samples in columns, and gene symbols in rows.
 Note:(1). The protein intensity matrix does not require normalization.(2). Sample names can only consist of letters, numbers, and underscores.
 
 2. Sample information file
 
-Sample information file is a three-column, tab-delimited file with the first line identifying the columns. The column names are Sample_id, Sample_condition, and MS_run.
+Sample information file is a three-column, tab-delimited file with the first line identifying the columns. The column names are ```Sample_id```, ```Sample_condition```, and ```MS_run```.
 
 ```bat
 library(motifscanR)
