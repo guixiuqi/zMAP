@@ -20,9 +20,12 @@ A Web-based application of zMAP is provided at http://bioinfo.sibs.ac.cn/shaolab
 The scripts of zMAP  require no installation and can be used in-place. Just install the dependencies (see below)
 
 ```python
-
-git clone 
-
+git clone https://github.com/guixiuqi/zMAP.git
+cd ./zmap
+scriptPATH=./python_script
+export scriptPATH
+gmtPATH=./data/gmt
+inputdataPATH=./data
 ```
 
 # Usage
