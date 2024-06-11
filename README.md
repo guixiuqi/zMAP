@@ -8,7 +8,7 @@ requires that all the involved MS runs are associated with the same biological d
 
 # Workflow of zMAP
 
-![Workflow of zMAP](https://github.com/guixiuqi/zMAP/blob/main/img/zMAP_workflow.png "zMAP Workflow")
+![Workflow of zMAP](https://github.com/guixiuqi/zMAP/blob/main/imgs/zMAP_workflow.png "zMAP Workflow")
 
 # Try it
 
