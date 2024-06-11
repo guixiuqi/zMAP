@@ -61,11 +61,8 @@ python $scriptPATH/zmap_step1_quantity_anaysis.py --protein_intensity_file $inpu
 _level_for_web.txt --sample_info $inputdataPATH/test_data/zmap_sample_info_for_web.txt --outdir $inputdataPATH/test_data/zMAP_res
 ults --window_size 400 --step_size 100 --percent 30 --method exponential_function
 ```
-The input object of genomic regions could be either [GenomicRanges](https://kasperdanielhansen.github.io/genbioconductor/html/GenomicRanges_GRanges.html), [DNAStringSet](https://kasperdanielhansen.github.io/genbioconductor/html/Biostrings.html), 
-[DNAString](https://kasperdanielhansen.github.io/genbioconductor/html/Biostrings.html), or character vector. You could see more detail with `?motifScan`
-
-`motifscanR` could also be used for genomic regions motif enrichment analysis
- between two sets of genomic regions with `motifEnrichment` function. 
+## Downstream analyses based on z-statistic
+### 
 
 ```r
 # Get a motif pwms
