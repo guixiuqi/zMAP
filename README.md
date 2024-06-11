@@ -27,13 +27,21 @@ export scriptPATH
 gmtPATH=./data/gmt
 inputdataPATH=./data
 ```
-## Dependencies
+## Python dependencies
 ```bat
 conda install matplotlib
 conda install conda-forge::pandas
 conda install anaconda::scipy
 conda install anaconda::seaborn
 conda install -c conda-forge scikit-learn
+```
+
+## R dependencies
+```bat
+library(GSVA)
+library(limma)
+library(GSEABase,quietly=TRUE)
+
 ```
 
 
