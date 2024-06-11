@@ -62,7 +62,31 @@ _level_for_web.txt --sample_info $inputdataPATH/test_data/zmap_sample_info_for_w
 ults --window_size 400 --step_size 100 --percent 30 --method exponential_function
 ```
 ## Downstream analyses based on z-statistic
-### 
+
+### Sample Quality Control
+
+Performing hierarchical clustering and principal component analysis on the z-statistic matrix of samples provides a concise visualization of the overall impact of sample conditions and MS runs.
+
+Two input files provided by user:
+
+1. Output file z_statistic_table.txt from zMAP
+
+
+    Note:(1). The protein intensity matrix does not require normalization.(2). Sample names can only consist of letters, numbers, and underscores.
+
+2. Sample information file
+
+    Sample information file is a three-column, tab-delimited file with the first line identifying the columns. The column names are ```Sample_id```, ```Sample_condition```, and ```MS_run```.
+
+Use the command shown as below:
+```bat
+python $scriptPATH/zmap_step1_quantity_anaysis.py --protein_intensity_file $inputdataPATH/test_data/raw_protein_intensity_in_gene
+_level_for_web.txt --sample_info $inputdataPATH/test_data/zmap_sample_info_for_web.txt --outdir $inputdataPATH/test_data/zMAP_res
+ults --window_size 400 --step_size 100 --percent 30 --method exponential_function
+```
+
+
+
 
 ```r
 # Get a motif pwms
