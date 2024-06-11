@@ -16,12 +16,13 @@ A Web-based application of zMAP is provided at http://bioinfo.sibs.ac.cn/shaolab
 
 
 # Installation
-## from source code
-The latest version release of `motifscanR` could install with:
+## From source code
+The scripts of zMAP  require no installation and can be used in-place. Just install the dependencies (see below)
 
+```python
 
-```r
-BiocManager::install('LouisKwok-PICB/motifscanR')
+git clone 
+
 ```
 
 # Usage
