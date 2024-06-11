@@ -55,6 +55,7 @@ A tab-delimited file containing raw gene-level protein intensity with samples in
     Sample information file is a three-column, tab-delimited file with the first line identifying the columns. The column names are ```Sample_id```, ```Sample_condition```, and ```MS_run```.
 
 Use the command shown as below:
+
 ```bat
 python $scriptPATH/zmap_step1_quantity_anaysis.py --protein_intensity_file $inputdataPATH/test_data/raw_protein_intensity_in_gene
 _level_for_web.txt --sample_info $inputdataPATH/test_data/zmap_sample_info_for_web.txt --outdir $inputdataPATH/test_data/zMAP_res
