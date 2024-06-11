@@ -55,21 +55,9 @@ A tab-delimited file containing raw gene-level protein intensity with samples in
     Sample information file is a three-column, tab-delimited file with the first line identifying the columns. The column names are ```Sample_id```, ```Sample_condition```, and ```MS_run```.
 
 ```bat
-library(motifscanR)
-library(JASPAR2020)
-library(BSgenome.Hsapiens.UCSC.hg19)
-
-# Get a motif pwms
-example_motifs <- getJasparMotifs(species = "Homo sapiens",
-                                  collection = "CORE")
-
-# Make a set of peaks
-peaks <- GenomicRanges::GRanges(seqnames = c("chr1","chr2","chr2"),
-                ranges = IRanges::IRanges(start = c(76585873,42772928,100183786),
-                                          width = 500))
-
-# Scan motif for example motifs
-motif_ix <- motifScan(example_motifs, peaks, genome = "BSgenome.Hsapiens.UCSC.hg19")
+python $scriptPATH/zmap_step1_quantity_anaysis.py --protein_intensity_file $inputdataPATH/test_data/raw_protein_intensity_in_gene
+_level_for_web.txt --sample_info $inputdataPATH/test_data/zmap_sample_info_for_web.txt --outdir $inputdataPATH/test_data/zMAP_res
+ults --window_size 400 --step_size 100 --percent 30 --method exponential_function
 ```
 The input object of genomic regions could be either [GenomicRanges](https://kasperdanielhansen.github.io/genbioconductor/html/GenomicRanges_GRanges.html), [DNAStringSet](https://kasperdanielhansen.github.io/genbioconductor/html/Biostrings.html), 
 [DNAString](https://kasperdanielhansen.github.io/genbioconductor/html/Biostrings.html), or character vector. You could see more detail with `?motifScan`
