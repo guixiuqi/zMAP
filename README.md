@@ -38,9 +38,9 @@ conda install -c conda-forge scikit-learn
 
 ## R dependencies
 ```bat
-library(GSVA)
-library(limma)
-library(GSEABase,quietly=TRUE)
+library(GSVA)  #version 1.28.0
+library(limma) #version 3.36.5
+library(GSEABase,quietly=TRUE) #version 1.42.0
 
 ```
 
