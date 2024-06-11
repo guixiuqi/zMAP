@@ -64,8 +64,8 @@ ults --window_size 400 --step_size 100 --percent 30 --method exponential_functio
 
 ### Sample Quality Control
 
-Performing hierarchical clustering and principal component analysis on the z-statistic matrix of samples provides a concise visualization of the overall impact of sample conditions and MS runs.
-
+Performing principal component and hierarchical clustering analysis on the z-statistic matrix of samples provides a concise visualization of the overall impact of sample conditions and MS runs.
+![QC of zMAP](https://github.com/guixiuqi/zMAP/blob/main/imgs/zmap_QC.png "zMAPQC")
 
 Two input files provided by user:
 
