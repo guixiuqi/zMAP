@@ -25,7 +25,7 @@ cd ./zmap
 scriptPATH=./python_script
 export scriptPATH
 gmtPATH=./data/gmt
-inputdataPATH=./data
+inputdataPATH=./data/test_data
 ```
 ## Python dependencies
 ```bat
@@ -64,7 +64,7 @@ Note:(1). The protein intensity matrix does not require normalization.(2). Sampl
 Use the command shown as below:
 
 ```bat
-python $scriptPATH/zmap_step1_quantity_anaysis.py --protein_intensity_file $inputdataPATH/test_data/raw_protein_intensity_in_gene_level_for_web.txt --sample_info $inputdataPATH/test_data/zmap_sample_info_for_web.txt --outdir $inputdataPATH/test_data/zMAP_results --window_size 400 --step_size 100 --percent 30 -method exponential_function
+python $scriptPATH/zmap.py --protein_intensity_file $inputdataPATH/raw_protein_intensity_in_gene_level_for_web.txt --sample_info $inputdataPATH/zmap_sample_info_for_web.txt --outdir $inputdataPATH/zMAP_results --window_size 400 --step_size 100 --percent 30 --method exponential_function
 ```
 ## Downstream analyses based on z-statistic
 
@@ -86,8 +86,7 @@ Two input files provided by user:
 
 Use the command shown as below:
 ```bat
-python $scriptPATH/sample_quality_control.py --z_statistic_matrix $inputdataPATH/test_data/zMAP_results/z_statistic_table.txt --sample_info $inputdataPATH/test_data/zmap_sample_info_for_web.tx
-t --outdir $inputdataPATH/test_data/sample_quality_control
+python $scriptPATH/sample_quality_control.py --z_statistic_matrix $inputdataPATH/zMAP_results/z_statistic_table.txt --sample_info $inputdataPATH/zmap_sample_info_for_web.txt --outdir $inputdataPATH/sample_quality_control
 ```
 ### Hypervariable proteins(HVPs) identification and clustering
 
@@ -132,7 +131,7 @@ Parameters:
 
 Use the command shown as below:
 ```bat
-python $scriptPATH/zmap_hypervariable_proteins_cluster.py --pvalue_results $inputdataPATH/test_data/zMAP_results/zmap_chi_square_pvalue.txt --z_statistic_matrix $inputdataPATH/test_data/zMAP_results/z_statistic_table.txt --sample_info $inputdataPATH/test_data/zmap_sample_info_for_web.txt --outdir $inputdataPATH/test_data/zmap_hypervariable_proteins_cluster --cluster_number_for_hypervariable 15 --minclustersize 20 --top 100 --cluster_number_for_top_proteins 8 --fdr 0.05
+python $scriptPATH/zmap_hypervariable_proteins_cluster.py --pvalue_results $inputdataPATH/zMAP_results/zmap_chi_square_pvalue.txt --z_statistic_matrix $inputdataPATH/zMAP_results/z_statistic_table.txt --sample_info $inputdataPATH/zmap_sample_info_for_web.txt --outdir $inputdataPATH/zmap_hypervariable_proteins_cluster --cluster_number_for_hypervariable 15 --minclustersize 20 --top 100 --cluster_number_for_top_proteins 8 --fdr 0.05
 ```
 ### Gene set variation analysis
 GSVA calculates gene set enrichment scores (GSVA scores) for each sample using the z-statistic matrix.
@@ -164,7 +163,7 @@ Parameters:
 
 Use the command shown as below:
 ```bat
-python $scriptPATH/gsva.py --z_statistic_matrix $inputdataPATH/test_data/zMAP_results/z_statistic_table.txt --sample_info $inputdataPATH/test_data/gsva_sample_info.txt --outdir $inputdataPATH//test_data/gsva --top_n 50 --fdr 0.05
+python $scriptPATH/gsva.py --z_statistic_matrix $inputdataPATH/zMAP_results/z_statistic_table.txt --sample_info $inputdataPATH/gsva_sample_info.txt --outdir $inputdataPATH/gsva --top_n 50 --fdr 0.05
 ```
 
 
