@@ -64,7 +64,7 @@ Note:(1). The protein intensity matrix does not require normalization.(2). Sampl
 Use the command shown as below:
 
 ```bat
-python $scriptPATH/zmap_step1_quantity_anaysis.py --protein_intensity_file $inputdataPATH/test_data/raw_protein_intensity_in_gene_level_for_web.txt --sample_info $inputdataPATH/test_data/zmap_sample_info_for_web.txt --outdir $inputdataPATH/test_data/zMAP_results --window_size 400 --step_size 100 --percent 30 -method exponential_function
+python $scriptPATH/zmap.py --protein_intensity_file $inputdataPATH/test_data/raw_protein_intensity_in_gene_level_for_web.txt --sample_info $inputdataPATH/test_data/zmap_sample_info_for_web.txt --outdir $inputdataPATH/test_data/zMAP_results --window_size 400 --step_size 100 --percent 30 -method exponential_function
 ```
 ## Downstream analyses based on z-statistic
 
