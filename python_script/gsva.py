@@ -7,6 +7,9 @@ import argparse
 import os
 import random
 import matplotlib.pyplot as plt
+matplotlib.rcParams['pdf.fonttype'] = 42
+matplotlib.rcParams['ps.fonttype'] = 42
+
 
 def get_batch_color_dict(batch_df,col_=""):
     

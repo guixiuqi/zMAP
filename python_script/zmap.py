@@ -14,6 +14,9 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+matplotlib.rcParams['pdf.fonttype'] = 42
+matplotlib.rcParams['ps.fonttype'] = 42
+
 #matplotlib.use('Agg')
 #import matplotlib
 import os

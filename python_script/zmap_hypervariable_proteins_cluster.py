@@ -19,7 +19,8 @@ import argparse
 from sklearn.decomposition import PCA 
 from matplotlib.lines import Line2D
 import scipy
-
+matplotlib.rcParams['pdf.fonttype'] = 42
+matplotlib.rcParams['ps.fonttype'] = 42
 import random
 import matplotlib.pyplot as plt
 from collections import Counter
