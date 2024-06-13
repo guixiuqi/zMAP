@@ -1,3 +1,17 @@
+# zMAP toolset
+Isobaric labeling-based mass spectrometry (ILMS) has been widely used to quantify, on a proteome-wide scale, the relative protein abundance in different biological conditions. 
+However, large-scale ILMS data sets typically involve multiple runs of mass spectrometry (MS), bringing great computational difficulty to the integration of ILMS samples. 
+We present zMAP toolset that makes ILMS intensities comparable across MS runs by modeling the associated mean-variance dependence and accordingly applying a variance stabilizing z-transformation.
+
+This application provides two computation modules (zMAP and reverse-zMAP) for transforming ILMS intensities into z-statistics and thus integrating samples across MS runs,
+as well as a series of interfaces to common downstream analyses on the integrated z-statistic matrix.
+![zMAP toolset](https://github.com/guixiuqi/zMAP/blob/main/imgs/zMAP_overview.png "zMAP toolset")
+
+zMAP is provided at https://github.com/guixiuqi/zMAP/
+
+reverse-zMAP is provided at https://github.com/guixiuqi/reverse-zMAP
+
+Contact：guixiuqi@gmail.com
 # zMAP
 
 The design of zMAP aims to simultaneously compare protein profiles of multiple samples and integrate samples from different MS runs for identifying hypervariable 
