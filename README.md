@@ -183,6 +183,10 @@ python $scriptPATH/gsva.py --z_statistic_matrix $inputdataPATH/zMAP_results/z_st
 
 # Citation
 
-To cite the `zMAP` package in publications, please use
+To cite the `zMAP` package in publications, please cite
+
+zMAP toolset: model-based analysis of large-scale proteomic data via a variance stabilizing z-transformation
+
+
 
 
