@@ -187,6 +187,7 @@ To cite the `zMAP` package in publications, please cite
 
 zMAP toolset: model-based analysis of large-scale proteomic data via a variance stabilizing z-transformation
 
-
+# License
+zMAP is licensed under the GNU General Public License v3.0 (GPLv3) and is available for free use in academic and research settings, provided that all terms of the GPLv3 are adhered to, including the requirement that any modifications or derivative works must also be distributed under the same license.
 
 
