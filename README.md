@@ -183,9 +183,9 @@ python $scriptPATH/gsva.py --z_statistic_matrix $inputdataPATH/zMAP_results/z_st
 
 # Citation
 
-To cite the `zMAP` package in publications, please cite
+To cite the zMAP toolset in publications, please cite
 
-zMAP toolset: model-based analysis of large-scale proteomic data via a variance stabilizing z-transformation
+Gui, X., Huang, J., Ruan, L. et al. zMAP toolset: model-based analysis of large-scale proteomic data via a variance stabilizing z-transformation. Genome Biol 25, 267 (2024). https://doi.org/10.1186/s13059-024-03382-9
 
 # License
 zMAP is licensed under the GNU General Public License v3.0 (GPLv3) and is available for free use in academic and research settings, provided that all terms of the GPLv3 are adhered to, including the requirement that any modifications or derivative works must also be distributed under the same license.
