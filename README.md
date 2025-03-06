@@ -26,7 +26,7 @@ zMAP requires that all the involved MS runs are associated with the same biologi
 
 # Try it
 
-A Web-based application of zMAP is provided at http://bioinfo.sibs.ac.cn/shaolab/zMAP. 
+A Web-based application of zMAP is provided at http://bioinfo.cemps.ac.cn/shaolab/zMAP. 
 
 
 # Installation
